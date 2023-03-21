@@ -1,5 +1,31 @@
+//My function
 function findFirstDuplicate(arr) {
-  // type your code here
+  let arrCopy = []
+  for (let i = 0; i < arr.length; i ++) {
+    let x = arr[i]
+    if (arrCopy.includes(x)){
+      return x
+    }
+    else {
+      arrCopy.push(x)
+    }
+  }  
+  return -1
+  
+}
+
+//Function created by ChatGPT
+//This function uses a hash table
+function findFirstDuplicate(arr) {
+  let freq = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (freq[arr[i]]) {
+      return arr[i];
+    } else {
+      freq[arr[i]] = 1;
+    }
+  }
+  return -1;
 }
 
 if (require.main === module) {
